@@ -41,16 +41,39 @@ Jade has to be first washed and then cut to inspect the inside of the stone to g
 
 Demand from China accounts for virtually the entire global market in jade (Shortell 2017, p 12). Moreover, jade is a luxury item that does not have a stable demand but rather it fluctuates depending on tastes and fashion. This means that the price of jade can be highly volatile depending on the whims of Chinese consumers.
 
-Indeed we can see from the data on the price of jade exports to China that prices can fluctuate immensely from year to year.
+Indeed we can see from the data on the average price of jade exports to China that prices can fluctuate immensely from year to year. 
 
 <iframe id="datawrapper-chart-oR0UD" src="//datawrapper.dwcdn.net/oR0UD/1/" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" style="width: 0; min-width: 100% !important;" height="452"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["oR0UD"]={},window.datawrapper["oR0UD"].embedDeltas={"100":552,"200":477,"300":477,"400":452,"500":452,"600":452,"700":452,"800":452,"900":452,"1000":452},window.datawrapper["oR0UD"].iframe=document.getElementById("datawrapper-chart-oR0UD"),window.datawrapper["oR0UD"].iframe.style.height=window.datawrapper["oR0UD"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["oR0UD"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("oR0UD"==b)window.datawrapper["oR0UD"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
 
-<iframe src="//datawrapper.dwcdn.net/oR0UD/1/" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" width="600" height="452"></iframe>
 
 ## Production
 
+In order to determine how much Myanmar's jade production is worth, idealy we need to know:
+
+* the total volume of production of jade
+* a breakdown of that total volume by grade of jade
+* the price of each of the grades of jade for each year
+
+Unfortunately, reliable data is hard to come by for all of those categories of data. Instead we will highlight the data sources that are available and look at what insights they can give.
+
 ### Myanmar government's reports from Central Statistical Office
+
+Myanmar's Central Statistical Office provides data on a yearly and monthly basis for the total amount of jade that is mined officially.
+
+<iframe id="datawrapper-chart-hZoe2" src="//datawrapper.dwcdn.net/hZoe2/1/" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" style="width: 0; min-width: 100% !important;" height="380"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["hZoe2"]={},window.datawrapper["hZoe2"].embedDeltas={"100":498,"200":422,"300":397,"400":380,"500":380,"600":380,"700":380,"800":380,"900":380,"1000":380},window.datawrapper["hZoe2"].iframe=document.getElementById("datawrapper-chart-hZoe2"),window.datawrapper["hZoe2"].iframe.style.height=window.datawrapper["hZoe2"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["hZoe2"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("hZoe2"==b)window.datawrapper["hZoe2"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
+
+The problem with this data is that it does not give a breakdown by the grade of the jade. Because the price of jade varies so much depending on grade, the total production figures alone does not help us determine its value.
 
 ### Trade figures from UN COMTRADE
 
+One way in which we can get the value of jade is to look at data reported by the UN on the value of official jade exports to China. 
+
+<iframe id="datawrapper-chart-EJjti" src="//datawrapper.dwcdn.net/EJjti/1/" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" style="width: 0; min-width: 100% !important;" height="400"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["EJjti"]={},window.datawrapper["EJjti"].embedDeltas={"100":500,"200":425,"300":425,"400":400,"500":400,"600":400,"700":400,"800":400,"900":400,"1000":400},window.datawrapper["EJjti"].iframe=document.getElementById("datawrapper-chart-EJjti"),window.datawrapper["EJjti"].iframe.style.height=window.datawrapper["EJjti"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["EJjti"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("EJjti"==b)window.datawrapper["EJjti"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
+
+The report produced by Global Witness which claimed that the total production of jade in 2014 could be over $30 billion also used the total value of jade exports from UN COMTRADE to infer the total value of all jade produced in Myanmar. 
+
 ### Emporium Sales
+
+In 2017, we received much more detailed information about the jade sales that occured in the official emporiums that are organised by the Myanmar Gems Enterprise, which is the state owned enterprise which overseas all jade production in Myanmar. 
+
+<iframe id="datawrapper-chart-Fx8de" src="//datawrapper.dwcdn.net/Fx8de/1/" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" oallowfullscreen="oallowfullscreen" msallowfullscreen="msallowfullscreen" style="width: 0; min-width: 100% !important;" height="600"></iframe><script type="text/javascript">if("undefined"==typeof window.datawrapper)window.datawrapper={};window.datawrapper["Fx8de"]={},window.datawrapper["Fx8de"].embedDeltas={"100":675,"200":625,"300":625,"400":600,"500":600,"600":600,"700":600,"800":600,"900":600,"1000":600},window.datawrapper["Fx8de"].iframe=document.getElementById("datawrapper-chart-Fx8de"),window.datawrapper["Fx8de"].iframe.style.height=window.datawrapper["Fx8de"].embedDeltas[Math.min(1e3,Math.max(100*Math.floor(window.datawrapper["Fx8de"].iframe.offsetWidth/100),100))]+"px",window.addEventListener("message",function(a){if("undefined"!=typeof a.data["datawrapper-height"])for(var b in a.data["datawrapper-height"])if("Fx8de"==b)window.datawrapper["Fx8de"].iframe.style.height=a.data["datawrapper-height"][b]+"px"});</script>
