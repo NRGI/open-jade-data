@@ -3578,3 +3578,18 @@ ul.filetype-holder {
   background-color: #FF7700;
   color: #fff;
 }
+
+.ijade {
+  color: #006743;
+  font-weight: 400;
+}
+
+.cjade {
+  color: #00A86B;
+  font-weight: 400;
+}
+
+.ujade {
+  color: #83CCB0;
+  font-weight: 400;
+}
