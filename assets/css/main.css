@@ -24,7 +24,6 @@
 
 	body {
 		line-height: 1;
-    margin: 16px;
 	}
 
 	ol, ul {
@@ -2715,6 +2714,7 @@
 
 		.main.style1 {
 			background: #fff;
+      margin: 16px;
 		}
 
 		.main.style2 {
