@@ -24,6 +24,7 @@
 
 	body {
 		line-height: 1;
+    margin: 16px;
 	}
 
 	ol, ul {
@@ -3474,6 +3475,10 @@
 }
 
 
+.story {
+  font-size: 0.9em;
+  text-align: justify;
+}
 
 .content {
 /*  padding: 16px;*/
