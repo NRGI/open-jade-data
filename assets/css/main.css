@@ -3603,3 +3603,11 @@ ul.filetype-holder {
   width: 100%
   overflow-x: auto;
 }
+
+
+
+/* Visualisation */
+
+#pricing_viz {
+  width: 100%;
+}
