@@ -30,7 +30,8 @@ build:
     - docker push nrgi/jade-portal:$BRANCH
     - docker push nrgi/jade-portal:$BRANCH.$COMMIT
 
-
+    # Trigger deploy through building a repo with deploy configuration
+    - ./shippable-deploy.sh
 integrations:
   hub:
     - integrationName: nrgiDockerHub
