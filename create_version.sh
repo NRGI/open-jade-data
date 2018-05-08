@@ -3,6 +3,6 @@
 cat > version.txt << EOF
 {
   "commit_sha": "$COMMIT",
-  "image": "nrgi/jade-portal:$BRANCH.$COMMIT"
+  "image": "nrgi/open-jade-data:$BRANCH.$COMMIT"
 }
 EOF
