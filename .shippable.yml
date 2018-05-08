@@ -1,0 +1,49 @@
+language: node_js
+
+node_js:
+  - 6.11.5
+
+branches:
+  only:
+    - staging
+    - master
+
+env:
+  global:
+    # Shippable API token used to trigger deploy
+    - secure: E5VJ4tLQmL20vWgoyScr5zQ9hwmuGq7IBM42TPBhZ4ZI1TTGyONc1Th58YVwbcsQRi7a/xNk7Oz0CHQ/898ELM3yVjzB4nrCyts58CfT1r8pPD6W+y9Z/7FkqnQwcM9r9kk4FQI55/5BMhzROgV4jAEMFYHfuovOTtNVHHLeNhE8UUwpvQEpBr+GQqVcMDF6FNkmrfe2JURQkh5kehxDE4xxO2/XYs/C23LBN2fp9g6e0Erzj1MgVeBCcJwGJvV9+KidKrgJ8FDIQfgXo9QmOdAPNhGPeGE29NdEv878Jug45nRKq+dHVN7NyO0rMrravJALYxq614mmY9avQ7/6GQ==
+build:
+  ci:
+    # Create the version file
+    - ./create_version.sh
+
+    # Pull latest image to be used as cache
+    - docker pull nrgi/open-jade-data:$BRANCH || echo 'Cache not available'
+
+    # Use the `--cache-from` option to use the latest image in the repo as a cache for this build. Available since Docker 1.13
+    # This should speed up the build time.
+    - docker build -t nrgi/open-jade-data:$BRANCH.$COMMIT --cache-from nrgi/open-jade-data:$BRANCH .
+
+    # Create the `latest` tag and force it in case the tag is already there from a previous build
+    - docker tag nrgi/open-jade-data:$BRANCH.$COMMIT nrgi/open-jade-data:$BRANCH
+
+    - docker push nrgi/open-jade-data:$BRANCH
+    - docker push nrgi/open-jade-data:$BRANCH.$COMMIT
+
+    # Trigger deploy through building a repo with deploy configuration
+    - ./shippable-deploy.sh
+integrations:
+  hub:
+    - integrationName: nrgiDockerHub
+      type: docker
+  notifications:
+    - integrationName: email
+      type: email
+      recipients:
+        - nrgi@vitaminsoftware.com
+      branches:
+        only:
+          - master
+          - staging
+      on_success: change
+      on_failure: always
