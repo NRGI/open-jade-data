@@ -2101,7 +2101,7 @@
 	input[type="password"],
 	input[type="email"],
 	select {
-		height: 2.75em;
+		height: 1.75em;
 	}
 
 	textarea {
@@ -3619,4 +3619,14 @@ ul.filetype-holder {
 
 #pricing_viz {
   width: 100%;
+  text-align: center;
+}
+
+#value {
+  float: right;
+}
+
+
+#qty {
+  float: left;
 }
