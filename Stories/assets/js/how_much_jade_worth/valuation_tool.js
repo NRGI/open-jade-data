@@ -48,7 +48,7 @@ var loadingValues = {
 
 console.log(loadingValues);
 
-[loadingValues.gw2014hp2013]
+[loadingValues.gw2014hp2013, loadingValues.mge2014, loadingValues.gw2014, loadingValues.mge2014hp2016]
 .map(function(s) {
   d3.select('#select_preset')
     .append("option")
@@ -64,92 +64,110 @@ console.log(chartBox);
 
 var margin = {top: 10, right: 10, bottom: 10, left: 10};
 var width = (chartBox.width - margin.left - margin.right);
-
-
 var m = 3; // number of distinct clusters
 
-currentData = loadingValues.gw2014hp2013;
-
-//var split = {i: 0.0046, c: 6.0548, u:93.9406};
-//var split = {i: 5, c: 35, u: 60};
-//var prices = {i: 871809., c: 2675., u:204.};
-//var prices = {i: 19491.97, c: 2213.89, u: 505.52};
-
-var split = currentData.split;
-var prices = currentData.prices;
-var totalWeight = currentData.totalWeight;
-var totalValue = currentData.totalValue;
-
-var n, sizes, grades, sqPositions, sqClusterPositions;
-[n,sizes,grades] = setGrades(split);
-[sqPositions, sqClusterPositions] = setSqPos(grades);
-
-var start = false;
-
 var color = d3.scale.linear().domain(d3.range(m))
-//      .interpolate(d3.interpolateHcl)
-      .range(["#006743","#00A86B","#83CCB0"]);
+  //      .interpolate(d3.interpolateHcl)
+        .range(["#006743","#00A86B","#83CCB0"]);
 
-// The largest node for each cluster.
 var clusters = new Array(m);
 
+var currentData;
+var split, prices, totalWeight, totalValue;
+var n, sizes, grades, sqPositions, sqClusterPositions;
+var start;
 var qtyTitle, qtyLabelPercent , qtyLabelKg, valueTitle, valueLabel;
-
-
-var nodes = d3.range(n).map(function(i) {
-  
-  [grade, size] = getGrade(i);
-//  console.log(grade,size);
-  
-  [xsPos,ysPos] = getSqPos(i);
-//  console.log(xsPos,ysPos);
-
-  
-//  var grade = Math.random() <= split.u ? 0 : (Math.random() <= split.i ? 2 : 1);
-  var r = Math.pow(getPrice(grade) * size * scaleFactor,0.5),
-      l = Math.pow(size,0.5) * stdLength,
-//      r = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
-      d = {
-        cluster: grade,
-        radius: r,
-        length: l,
-//        x: Math.cos(i / m * 2 * Math.PI) * 200 + width / 2 + Math.random(),
-//        y: Math.sin(i / m * 2 * Math.PI) * 200 + height / 2 + Math.random()
-        x: 2 * width / 3 + Math.random(),
-        y: grade/m * height + Math.random(),
-        xs: xsPos * (stdLength + sqPadding) + sqPadding,
-        ys: height / 4 + ysPos * (stdLength + sqPadding)
-      };
-  if (!clusters[i] || (r > clusters[i].radius)) {
-    clusters[i] = {
-        cluster: grade,
-        length: l,
-        radius: r,  
-        x: 2 * width / 3,
-        y: height/2,
-        xs: width / 4,
-        ys: height / 4 + getSqClusterY(grade) * (stdLength + sqPadding)
-      };
-  }
-  return d;
-});
-
-var force = d3.layout.force()
-    .nodes(nodes)
-    .size([width, height])
-    .gravity(.01)
-    .charge(0)
-    .on("tick", tick);//.start();
-
-var svg = d3.select("#pricing_viz").append("svg")
-    .attr("width", width)
-    .attr("height", height)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-
+var nodes;
 var node, nodeEnter;
+var force;
+var svg;
 
-resetAll();
+
+updateData();
+
+function updateData(values) {
+
+  currentData = values ? loadingValues[values] : loadingValues.gw2014hp2013;
+
+  //var split = {i: 0.0046, c: 6.0548, u:93.9406};
+  //var split = {i: 5, c: 35, u: 60};
+  //var prices = {i: 871809., c: 2675., u:204.};
+  //var prices = {i: 19491.97, c: 2213.89, u: 505.52};
+
+  split = currentData.split;
+  prices = currentData.prices;
+  totalWeight = currentData.totalWeight;
+  totalValue = currentData.totalValue;
+
+//  var n, sizes, grades, sqPositions, sqClusterPositions;
+  [n,sizes,grades] = setGrades(split);
+  [sqPositions, sqClusterPositions] = setSqPos(grades);
+
+  start = false;
+  
+  // The largest node for each cluster.
+
+//  var qtyTitle, qtyLabelPercent , qtyLabelKg, valueTitle, valueLabel;
+
+
+  nodes = d3.range(n).map(function(i) {
+
+    [grade, size] = getGrade(i);
+  //  console.log(grade,size);
+
+    [xsPos,ysPos] = getSqPos(i);
+  //  console.log(xsPos,ysPos);
+
+
+  //  var grade = Math.random() <= split.u ? 0 : (Math.random() <= split.i ? 2 : 1);
+    var r = Math.pow(getPrice(grade) * size * scaleFactor,0.5),
+        l = Math.pow(size,0.5) * stdLength,
+  //      r = Math.sqrt((i + 1) / m * -Math.log(Math.random())) * maxRadius,
+        d = {
+          cluster: grade,
+          radius: r,
+          length: l,
+  //        x: Math.cos(i / m * 2 * Math.PI) * 200 + width / 2 + Math.random(),
+  //        y: Math.sin(i / m * 2 * Math.PI) * 200 + height / 2 + Math.random()
+          x: 2 * width / 3 + Math.random(),
+          y: grade/m * height + Math.random(),
+          xs: xsPos * (stdLength + sqPadding) + sqPadding,
+          ys: height / 4 + ysPos * (stdLength + sqPadding)
+        };
+    if (!clusters[i] || (r > clusters[i].radius)) {
+      clusters[i] = {
+          cluster: grade,
+          length: l,
+          radius: r,  
+          x: 2 * width / 3,
+          y: height/2,
+          xs: width / 4,
+          ys: height / 4 + getSqClusterY(grade) * (stdLength + sqPadding)
+        };
+    }
+    return d;
+  });
+
+  force = d3.layout.force()
+      .nodes(nodes)
+      .size([width, height])
+      .gravity(.01)
+      .charge(0)
+      .on("tick", tick);//.start();
+
+//  if (svg) svg.removeAll();
+//  if (svg) svg.selectAll("*").remove();
+  d3.select("#pricing_viz").selectAll("svg").remove();
+  svg = d3.select("#pricing_viz").append("svg")
+      .attr("width", width)
+      .attr("height", height)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+
+//  node, nodeEnter;
+
+  resetAll();
+}
 
 function setGrades(split) {
   var n = 0;
@@ -358,10 +376,6 @@ function startAnimation() {
 }
 
 
-//function handleMouseOver() {
-//  d3.selectAll('circle')
-//    
-//}
 
 function resetAll() {
   
@@ -572,3 +586,12 @@ d3.select('#start_button').on('click', function() {
 
 });
 
+
+d3.select('#select_preset').on('change', function() {
+  console.log(this.value);
+  updateData(this.value);
+  document.getElementById('start_button').innerHTML = "START";
+  start = false;
+//  resetAll();
+
+});
