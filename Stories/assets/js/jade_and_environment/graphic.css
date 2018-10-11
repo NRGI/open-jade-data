@@ -19,7 +19,7 @@
 .graphic__vis {
 	position: absolute;
 	top: 0;
-	margin-left: 15rem;
+	margin-left: 0rem;
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
@@ -37,7 +37,7 @@
 }
 
 .graphic__vis svg {
-	border: 1px dashed black;
+/*	border: 1px dashed black;*/
 	top: 50%;
 	position: relative;
 	-webkit-transform: translateY(-50%);
@@ -52,10 +52,10 @@
 	fill: #fff;
 }
 
-.item text {
-	fill: #666;
-	font-size: 12px;
-	text-anchor: middle;
+.item-text {
+	fill: #fff;
+	font-size: 1.2rem;
+	text-anchor: left;
 	alignment-baseline: middle;
 }
 
