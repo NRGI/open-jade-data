@@ -2740,7 +2740,25 @@
 			background-attachment: fixed,							fixed;
 			background-image: url("images/overlay1.png"), url("../../images/header.jpg");
 			background-size: auto,							cover;
+			/* min-height: 600px; */
 		}
+
+			.main.style2.environment--diggers {
+				background-image: url("images/overlay1.png"),url("../../Stories/assets/img/environment/envi_01.jpg"); 
+			}
+
+			.main.style2.environment--moving {
+				background-image: url("images/overlay1.png"),url("../../Stories/assets/img/environment/Trucks.jpg"); 
+			}
+
+			.main.style2.environment--landslides {
+				background-image: url("images/overlay1.png"),url("../../Stories/assets/img/environment/landslide.jpg"); 
+			}
+
+
+			.main.style2.environment--environmenttoll {
+				background-image: url("images/overlay1.png"),url("../../Stories/assets/img/environment/environmenttoll.jpg"); 
+			}
 
 			.main.style2 a {
 				border-bottom-color: rgba(255, 255, 255, 0.5);
@@ -3225,6 +3243,10 @@
 				padding: 5em 3em 3em 3em ;
 			}
 
+			.main.style2 {
+				background-attachment: scroll;
+			}
+
 		/* Header */
 
 			#header {
@@ -3316,6 +3338,10 @@
 				padding: 3em 1.5em 1em 1.5em ;
 			}
 
+			.main.style2 {
+				background-attachment: scroll;
+			}
+
 		/* Header */
 
 			#header {
@@ -3389,6 +3415,10 @@
 				padding: 2em 1.5em 0.1em 1.5em ;
 			}
 
+			.main.style2 {
+				background-attachment: scroll;
+			}
+
 		/* Header */
 
 			#header {
@@ -3436,6 +3466,10 @@
 
 			.main {
 				padding: 2em 1em 0.1em 1em ;
+			}
+
+			.main.style2 {
+				background-attachment: scroll;
 			}
 
 		/* Header */
@@ -3641,4 +3675,16 @@ ul.filetype-holder {
 
 #qty {
   float: left;
+}
+
+.photocaption {
+	font-size: 14px;
+	text-align: center;
+	font-style: italic;
+	padding: 0px 0px 15px 0px;
+}
+
+.relatedcontent {
+	border: 1px solid #2A2E45;
+	padding: 20px 40px;
 }
