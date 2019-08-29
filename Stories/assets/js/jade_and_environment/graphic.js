@@ -82,7 +82,7 @@ window.createGraphic = function(graphicSelector) {
         .append('tspan')
         .text("in Northern Myanmar")
         .attr('dy','1.2rem')
-        .attr('dx','-16.4rem');
+        .attr('dx','-20.4rem');
     },
 		function step3() {
       
@@ -229,7 +229,7 @@ window.createGraphic = function(graphicSelector) {
 
 		chart.append('text')
 			.text(function(d) { return d })
-      .attr('transform', 'translate(' + sizeX/4 + ',' + sizeY/5 + ')')
+      .attr('transform', 'translate(' + sizeX/40 + ',' + sizeY/5 + ')')
       .classed('item-text', true)
     
     
