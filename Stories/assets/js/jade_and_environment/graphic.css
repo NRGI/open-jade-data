@@ -1,0 +1,73 @@
+/* GRAPHIC CODE */
+.graphic {
+	width: 100%;
+	position: relative;
+}
+
+.graphic__prose {
+	width: 24rem;
+  z-index: 10;
+}
+
+.graphic__prose .trigger {
+	padding: 0;
+	margin: 0;
+	min-height: 300px;
+	
+}
+
+.graphic__vis {
+	position: absolute;
+	top: 0;
+	margin-left: 0rem;
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	height: 100vh;
+  z-index: 0;
+}
+
+.graphic__vis.is-fixed {
+	position: fixed;
+}
+
+.graphic__vis.is-bottom {
+	top: auto;
+	bottom: 0;
+}
+
+.graphic__vis svg {
+/*	border: 1px dashed black;*/
+	top: 50%;
+	position: relative;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	transform: translateY(-50%);
+
+}
+
+.item circle {
+	stroke: #666;
+	stroke-width: 1px;
+	fill: #fff;
+}
+
+.item-text {
+	fill: #fff;
+	font-size: 1.2rem;
+	text-anchor: left;
+	alignment-baseline: middle;
+}
+
+
+
+/* graph-scroll.js version */
+.graphic__vis.graph-scroll-fixed {
+	position: fixed;
+	right: auto;
+}
+
+.graphic__vis.graph-scroll-below {
+	top: auto;
+	bottom: 0;
+}

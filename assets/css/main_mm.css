@@ -2729,7 +2729,7 @@
 
 		.main.style1 {
 			background: #fff;
-      margin: 16px;
+      /* margin: 16px; */
 		}
 
 		.main.style2 {
@@ -2739,6 +2739,25 @@
 			background-image: url("images/overlay1.png"), url("../../images/header.jpg");
 			background-size: auto,							cover;
 		}
+
+
+		.main.style2.environment--diggers {
+			background-image: url("images/overlay1.png"),url("../../Stories/assets/img/environment/envi_01.jpg"); 
+		}
+
+		.main.style2.environment--moving {
+			background-image: url("images/overlay1.png"),url("../../Stories/assets/img/environment/Trucks.jpg"); 
+		}
+
+		.main.style2.environment--landslides {
+			background-image: url("images/overlay1.png"),url("../../Stories/assets/img/environment/landslide.jpg"); 
+		}
+
+
+		.main.style2.environment--environmenttoll {
+			background-image: url("images/overlay1.png"),url("../../Stories/assets/img/environment/environmenttoll.jpg"); 
+		}
+
 
 			.main.style2 a {
 				border-bottom-color: rgba(255, 255, 255, 0.5);
@@ -3629,4 +3648,23 @@ ul.filetype-holder {
 
 #pricing_viz {
   width: 100%;
+}
+
+
+.photocaption {
+	font-size: 14px;
+	text-align: center;
+	font-style: italic;
+	padding: 0px 0px 15px 0px;
+}
+
+.relatedcontent {
+	border: 1px solid #2A2E45;
+	padding: 20px 40px;
+}
+
+
+.videoblock {
+	min-width: 100%;
+	text-align: center;
 }
