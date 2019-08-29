@@ -54,7 +54,8 @@
 
 .item-text {
 	fill: #fff;
-	font-size: 1.2rem;
+	font-size: 1.5rem;
+	font-weight: 400;
 	text-anchor: left;
 	alignment-baseline: middle;
 }
